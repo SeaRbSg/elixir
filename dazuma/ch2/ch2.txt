@@ -1,0 +1,24 @@
+# PatternMatching-1
+
+a = [1,2,3]        # Match
+a = 4              # Match
+4 = a              # No
+[a,b] = [1,2,3]    # No
+a = [[1,2,3]]      # Match
+[a] = [[1,2,3]]    # Match
+[[a]] = [[1,2,3]]  # No
+
+# PatternMatching-2
+
+[a,b,a] = [1,2,3]  # No
+[a,b,a] = [1,1,2]  # No
+[a,b,a] = [1,2,1]  # Match
+
+# PatternMatching-3
+
+[a,b,a] = [1,2,3]  # No
+[a,b,a] = [1,1,2]  # No
+a = 1              # Match
+^a = 2             # Match
+^a = 1             # No
+^a = 2 - a         # No
