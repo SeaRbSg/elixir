@@ -2,7 +2,7 @@
 
 a = [1,2,3]        # Match
 a = 4              # Match
-4 = a              # No
+4 = a              # Match
 [a,b] = [1,2,3]    # No
 a = [[1,2,3]]      # Match
 [a] = [[1,2,3]]    # Match
