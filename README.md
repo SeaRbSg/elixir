@@ -1,5 +1,7 @@
 # Seattle.Rb Elixir Study Group
 
+[![Join the chat at https://gitter.im/SeaRbSg/elixir](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/SeaRbSg/elixir?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## Study Schedule
 
 week | chapters   | pages | comments
