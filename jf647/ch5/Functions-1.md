@@ -1,5 +1,7 @@
 # Part 1
 
+list_concat = fn a, b -> a ++ b end
+
 ```
 Interactive Elixir (1.0.2) - press Ctrl+C to exit (type h() ENTER for help)
 iex(1)> list_concat = fn a, b -> a ++ b end
@@ -12,6 +14,8 @@ iex(3)> list_concat.([:a, :b], [:c, :d])
 
 # Part 2
 
+sum = fn a, b, c -> a + b + c end
+
 ```
 Interactive Elixir (1.0.2) - press Ctrl+C to exit (type h() ENTER for help)
 iex(1)> sum = fn a, b, c -> a + b + c end
@@ -22,6 +26,8 @@ iex(3)>
 ```
 
 # Part 3
+
+pair_tuple_to_list = fn { a, b } -> [ a, b ] end
 
 ```
 Interactive Elixir (1.0.2) - press Ctrl+C to exit (type h() ENTER for help)
