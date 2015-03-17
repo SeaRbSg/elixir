@@ -7,7 +7,7 @@ end
 
 ```
 Interactive Elixir (1.0.2) - press Ctrl+C to exit (type h() ENTER for help)
-iex(1)> fizzbuzz = fn a, b, c
+iex(1)> fizzbuzz = fn
 ...(1)>   0, 0, _ -> "FizzBuzz"
 ...(1)>   0, _, _ -> "Fizz"
 ...(1)>   _, 0, _ -> "Buzz"
