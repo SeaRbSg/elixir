@@ -1,5 +1,10 @@
 fizzler = fn 
-  (a=0, b=0, _) -> "FizzBuzz"
+  (a=0, b=0, _) ->
+    IO.puts "test line 1"
+    IO.puts "test line 2"
+    IO.puts "test line 3"
+    IO.puts "test line 4"
+    "FizzBuzz"
   (a=0, _,   _) -> "Fizz"
   (_, b=0,   _) -> "Buzz"
   (_,   _,   c) -> c
