@@ -1,0 +1,16 @@
+```
+M00972939 ➜  ch6 git:(master) ✗ iex ModulesAndFunctions-6.exs
+Erlang/OTP 17 [erts-6.3] [source] [64-bit] [smp:8:8] [async-threads:10] [hipe] [kernel-poll:false] [dtrace]
+
+Interactive Elixir (1.0.2) - press Ctrl+C to exit (type h() ENTER for help)
+iex(1)> Chop.guess(273, 1..1000)
+Is it 500?
+Is it 250?
+Is it 375?
+Is it 312?
+Is it 281?
+Is it 265?
+Is it 273?
+273
+:ok
+```
