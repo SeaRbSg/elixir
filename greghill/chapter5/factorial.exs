@@ -1,4 +1,4 @@
-#This should product a factorial of a passed number. 
+ #This should product a factorial of a passed number. 
 fl = fn
   (0, _)  -> 1 
   (1, _)  -> 1
