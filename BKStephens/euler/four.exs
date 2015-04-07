@@ -5,7 +5,7 @@ defmodule Four do
     for x <- min..max,
         y <- x..max,
         is_palindrome?(x * y),
-        do: [x * y]
+        do: x * y
   end
 
   def is_palindrome?(n), do: to_string(n) == String.reverse(to_string(n))
