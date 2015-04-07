@@ -29,8 +29,6 @@ defmodule Mylist do
   # prime is if a number when divided by any number up to itself always leaves a remainder. 
   defp is_prime?(number), 
     do: all?(Enum.into(2..number-1,[]), &(rem(number,&1)!=0))
-  
-
 
 end
 
