@@ -1,5 +1,5 @@
 defmodule Euler31 do
-  def coin_strategies(money, _) when money == 0, do: 1
+  def coin_strategies(0, _), do: 1
 
   def coin_strategies(money, _) when money < 0, do: 0
 
