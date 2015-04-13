@@ -16,17 +16,31 @@ defmodule Checkout do
   end
 end
 
+
+defmodule Orders do
+  def parse(filename) do
+    {:ok, input} = File.read(filename)
+
+    records = String.split(input)
+
+    Enum.map(records, &(parse_record(&1)))
+  end
+
+  # private
+
+  defp parse_record(record) do
+    record = String.strip(record)
+    [id, state, amount] = String.split(record, ",")
+
+    [
+      id: elem(Integer.parse(id), 0),
+      ship_to: String.to_atom(String.lstrip(state, ?:)),
+      net_amount: elem(Float.parse(amount), 0)
+    ]
+  end
+end
+
+
+orders = Orders.parse("orders.csv")
 tax_rates = [ NC: 0.075, TX: 0.08 ]
-
-orders = [
-  [ id: 123, ship_to: :NC, net_amount: 100.00 ],
-  [ id: 124, ship_to: :OK, net_amount: 35.50 ],
-  [ id: 125, ship_to: :TX, net_amount: 24.00 ],
-  [ id: 126, ship_to: :TX, net_amount: 44.80 ],
-  [ id: 127, ship_to: :NC, net_amount: 25.00 ],
-  [ id: 128, ship_to: :MA, net_amount: 10.00 ],
-  [ id: 129, ship_to: :CA, net_amount: 102.00 ],
-  [ id: 120, ship_to: :NC, net_amount: 50.00 ],
-]
-
 IO.inspect Checkout.calculate_sales_tax(orders, tax_rates)
