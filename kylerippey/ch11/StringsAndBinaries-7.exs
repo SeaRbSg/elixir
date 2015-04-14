@@ -33,9 +33,9 @@ defmodule Orders do
     [id, state, amount] = String.split(record, ",")
 
     [
-      id: elem(Integer.parse(id), 0),
-      ship_to: String.to_atom(String.lstrip(state, ?:)),
-      net_amount: elem(Float.parse(amount), 0)
+      id: id |> Integer.parse |> elem(0),
+      ship_to: state |> String.lstrip(?:) |> String.to_atom,
+      net_amount: amount |> Float.parse |> elem(0)
     ]
   end
 end
