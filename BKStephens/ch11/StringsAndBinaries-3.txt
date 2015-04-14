@@ -1,0 +1,10 @@
+Lists in elixir have a head, and a tail which is another list. Single quoted strings are stored as a list of characters. I suppose elixir is printing the head of each list.
+
+iex(23)> [ 'cat' | 'dog' ]
+['cat', 100, 111, 103]
+iex(24)> [ 'cat' | ['dog' | 'fish'] ]
+['cat', 'dog', 102, 105, 115, 104]
+iex(25)> [ 'cat' | ['dog' | "fish"] ]
+['cat', 'dog' | "fish"]
+
+The output of [ 'cat' | ['dog' | 'fish'] ] is interesting because it prints cat and dog, but then the ascii integers for fish. It appears that the output only joins characters for the bottommost tail.
