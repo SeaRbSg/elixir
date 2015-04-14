@@ -21,16 +21,13 @@ defmodule Orders do
   def parse(filename) do
     {:ok, input} = File.read(filename)
 
-    records = String.split(input)
-
-    Enum.map(records, &(parse_record(&1)))
+    input |> String.split |> Enum.map(&(parse_record(&1)))
   end
 
   # private
 
   defp parse_record(record) do
-    record = String.strip(record)
-    [id, state, amount] = String.split(record, ",")
+    [id, state, amount] = record |> String.strip |> String.split(",")
 
     [
       id: id |> Integer.parse |> elem(0),
