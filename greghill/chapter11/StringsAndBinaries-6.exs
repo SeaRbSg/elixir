@@ -3,9 +3,9 @@ defmodule Parse do
   def capitalise_sentences(string) do
     string 
     |> String.split(".") 
-    |> Enum.map_join(". ",&clean_word(&1))
+    |> Enum.map_join(". ",&clean_element(&1))
   end
-  def clean_word(word) do
+  def clean_element(word) do
     word 
     |> String.lstrip(?\s) 
     |> String.capitalize
