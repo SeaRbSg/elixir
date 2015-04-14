@@ -13,13 +13,14 @@ week | chapters   | pages | comments
 3/30 | 7\*        | 14    |
 4/6  | 8, 9, 10\* | 32    |
 4/13 | 11, 12     | 24    |
-4/20 | 13         | 34    | long homework in this chapter
-4/27 | 14\*, 15   | 22    |
-5/4  | 16\*, 17\* | 24    |
-5/11 | 18, 19     | 22    |
-5/18 | 20\*, 21   | 24    |
-5/25 | 22\*, 23   | 22    |
-6/1  | A1, A2     | 18    | wrap-up
+4/20 | 13         | 34    | no meetup this week, long homework in this chapter.
+4/27 | 13 cont.   | -     |
+5/4  | 14\*, 15   | 22    |
+5/11 | 16\*, 17\* | 24    |
+5/18 | 18, 19     | 22    |
+5/25 | 20\*, 21   | 24    |
+6/1  | 22\*, 23   | 22    |
+6/8  | A1, A2     | 18    | wrap-up
 
 Starred chapters include the most important concepts that we should spend time on
 
