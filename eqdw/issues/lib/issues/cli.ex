@@ -8,7 +8,7 @@ defmodule Issues.CLI do
   table of the last _n_ issues in a github project
   """
 
-  def run(argv) do
+  def main(argv) do
     argv
       |> parse_args
       |> process
@@ -49,6 +49,8 @@ defmodule Issues.CLI do
     |> convert_to_list_of_hashdicts
     |> sort_into_ascending_order
     |> Enum.take(count)
+    |> Issues.Formatter.format
+    |> IO.puts
   end
 
   def decode_response({:ok, body}), do: body
