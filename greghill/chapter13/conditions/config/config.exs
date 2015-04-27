@@ -24,3 +24,4 @@ use Mix.Config
 #     import_config "#{Mix.env}.exs"
 
 config :conditions, weather_url: "http://w1.weather.gov/xml/current_obs"
+config :logger, compile_time_purge_level: :info

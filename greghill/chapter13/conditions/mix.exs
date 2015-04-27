@@ -7,7 +7,9 @@ defmodule Conditions.Mixfile do
      elixir: "~> 1.0",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps]
+     deps: deps,
+     escript: escript_config
+   ]
   end
 
   # Configuration for the OTP application
@@ -30,5 +32,9 @@ defmodule Conditions.Mixfile do
     [ { :exmerl, "~> 0.1.1"},
       { :httpoison, "~>0.4" }
     ]
+  end
+
+  def escript_config do
+    [ main_module: Conditions.CLI]
   end
 end

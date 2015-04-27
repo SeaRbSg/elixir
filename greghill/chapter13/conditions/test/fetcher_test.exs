@@ -4,13 +4,8 @@ defmodule FetcherTest do
 
   alias Conditions.Fetcher, as: CF
 
-
-  test "get_temp_data" do
+  test "get_data" do
     {:ok, xml} = Conditions.Fetcher.fetch("KDEW")
-    {node, rest} = xml |>  Exmerl.XPath.find("//current_observation/temp_f/text()")
-    [node_element] = node
-    {_, _,_,_,temp,_} = node_element
-    assert is_list(temp)
-
+    assert is_string(xml)
   end
 end

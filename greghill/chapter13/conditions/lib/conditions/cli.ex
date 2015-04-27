@@ -36,7 +36,7 @@ defmodule Conditions.CLI do
   def process(location) do
     Conditions.Fetcher.fetch(location)
     |> decode_response
-    |> Conditions.TableFormatter.print_table_rows(["temperature_string", "relative_humidity", "wind_string"])
+    |> Conditions.TableFormatter.print_table_rows(["temperature_string", "relative_humidity", "wind_string","weather"])
   end
 
   def decode_response({:ok, body}),    do: body
