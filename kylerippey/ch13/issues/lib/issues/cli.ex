@@ -1,6 +1,8 @@
 defmodule Issues.CLI do
   @default_count 4
 
+  import Issues.TableFormatter, only: [ print_table_for_columns: 2 ]
+
   @moduledoc """
     Handle the command line parsing and the
     dispatch to the various functions that
@@ -39,7 +41,7 @@ defmodule Issues.CLI do
     usage: issues <user> <project> [ count | #{@default_count} ]
     """
     System.halt(0)
-  end
+  end 
 
   def process({user, project, count}) do
     Issues.GithubIssues.fetch(user, project)
@@ -47,6 +49,7 @@ defmodule Issues.CLI do
     |> convert_to_list_of_hashdicts
     |> sort_into_ascending_order
     |> Enum.take(count)
+    |> print_table_for_columns(["number", "created_at", "title"])
   end
 
   def decode_response({:ok, body}), do: body
