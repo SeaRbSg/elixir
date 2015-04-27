@@ -14,7 +14,6 @@ defmodule Parse do
 
   def convert_to_keyword_list([],[]), do: []
   def convert_to_keyword_list([first_value|rest_values], [first_header | rest_headers]) do
-    IO.puts "handling #{first_header} and #{first_value}"
     [{String.to_atom(first_header),value_convert(first_value)} | convert_to_keyword_list(rest_values,rest_headers)]
   end
 

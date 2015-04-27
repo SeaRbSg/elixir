@@ -1,0 +1,9 @@
+%{"earmark": {:hex, :earmark, "0.1.15"},
+  "ex_doc": {:git, "git://github.com/elixir-lang/ex_doc.git", "27a1efed075ce6913385d87fb5eafe90cef4b776", []},
+  "hackney": {:hex, :hackney, "1.1.0"},
+  "hoedown": {:git, "git://github.com/hoedown/hoedown.git", "365ad578e7b767ffe7126f029c184d727a3e95b3", []},
+  "httpoison": {:hex, :httpoison, "0.6.2"},
+  "idna": {:hex, :idna, "1.0.2"},
+  "jsx": {:hex, :jsx, "2.6.0"},
+  "markdown": {:git, "git://github.com/devinus/markdown.git", "cd0df79b6f1cc374499d47f6ba6aaab5096f874f", []},
+  "ssl_verify_hostname": {:hex, :ssl_verify_hostname, "1.0.4"}}

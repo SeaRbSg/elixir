@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Issues.TableFormatter</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" href="css/elixir.css" type="text/css" media="screen" charset="utf-8" />
+    <script type="text/javascript" charset="utf-8">
+      relpath = '';
+      if (relpath != '') relpath += '/';
+    </script>
+
+    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/highlight.pack.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      hljs.initHighlightingOnLoad();
+      hljs.configure({languages: []}); //disable autodetect
+    </script>
+  </head>
+
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+
+    <section id="content">
+      <div class="breadcrumbs">Issues v0.0.1 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Issues.html">Issues</a> &rarr; <a href="Issues.TableFormatter.html">TableFormatter</a></div>
+      <h1>
+        Issues.TableFormatter
+        
+      </h1>
+
+      <ul class="summary_links">
+        
+          <li><a href="#summary">Summary</a></li>
+        
+        
+        
+          <li><a href="#functions_details">Functions</a></li>
+        
+        
+        
+      </ul>
+
+      
+
+      
+        <a href="https://github.com/SeaRbSg/elixir/greghill/chapter13/issues/blob/master/lib/issues/table_formatter.ex#L1" class="view_source">Source</a>
+      
+
+      
+        <h2 id="summary">Summary<span class="detail_header_links"><a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a></span></h2>
+        <table class="summary">
+          <tr>
+  <td class="summary_signature"><a href="#getFormatter/3">getFormatter(list1, padder, separator)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#get_header_widths/2">get_header_widths(list1, list2)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#get_max_widths/2">get_max_widths(columns, data)</a></td>
+  
+    <td class="summary_synopsis"><p>Given a list of HashDicts, where each HashDicts contains a keyed list of columns,
+   return a list containing the longest length of the data in each column. The <code class="inline">columns</code> 
+  parameter contains the list of columns to extract.   ## Example   iex&gt;  testdata = HashDict.new
+  iex&gt;  testdata = Dict.put(testdata,”head1”,10)
+  iex&gt;  testdata = Dict.put(testdata,”head2”,”valuevslfgdd”)
+  iex&gt;  testdata2 = testdata
+  iex&gt;  testdata2 = Dict.put(testdata2,”head2”,”valuevslfgddsdfsdf”)
+  iex&gt;  testlist = [testdata,testdata2]
+  iex&gt;  Issues.TableFormatter.get_max_widths(["head1", "head2"],testlist)
+  [2,18]</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#greater_column_size/2">greater_column_size(list, column_name)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#print_table_rows/2">print_table_rows(data, columns_to_print)</a></td>
+  
+    <td class="summary_synopsis"><p>Takes a list of row data, where each row is a HashDict, and a list of headers.
+Prints a table to STDOUT of the data from each row identified by each header.
+That is, each header identifies a column, and those columns are extracted and
+ printed from the rows. We calculate the width of each column to fit the 
+ longest element in that column</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#printheader/2">printheader(columns, widths)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#printrows/3">printrows(columns, issues, max_column_widths)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#printseparator/1">printseparator(widths)</a></td>
+  
+</tr>
+
+        </table>
+      
+
+      
+
+      
+        <section id="functions_details" class="details_list">
+          <h2>Functions</h2>
+          <section class="detail">
+  <div class="detail_header" id="getFormatter/3">
+    <span class="signature"><strong>getFormatter(list1, padder, separator)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#getFormatter/3" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+    <a href="https://github.com/SeaRbSg/elixir/greghill/chapter13/issues/blob/master/lib/issues/table_formatter.ex#L69" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="get_header_widths/2">
+    <span class="signature"><strong>get_header_widths(list1, list2)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#get_header_widths/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+    <a href="https://github.com/SeaRbSg/elixir/greghill/chapter13/issues/blob/master/lib/issues/table_formatter.ex#L42" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="get_max_widths/2">
+    <span class="signature"><strong>get_max_widths(columns, data)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#get_max_widths/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>  Given a list of HashDicts, where each HashDicts contains a keyed list of columns,
+   return a list containing the longest length of the data in each column. The <code class="inline">columns</code> 
+  parameter contains the list of columns to extract.   ## Example   iex&gt;  testdata = HashDict.new
+  iex&gt;  testdata = Dict.put(testdata,”head1”,10)
+  iex&gt;  testdata = Dict.put(testdata,”head2”,”valuevslfgdd”)
+  iex&gt;  testdata2 = testdata
+  iex&gt;  testdata2 = Dict.put(testdata2,”head2”,”valuevslfgddsdfsdf”)
+  iex&gt;  testlist = [testdata,testdata2]
+  iex&gt;  Issues.TableFormatter.get_max_widths(["head1", "head2"],testlist)
+  [2,18]</p>
+
+  </section>
+  
+    <a href="https://github.com/SeaRbSg/elixir/greghill/chapter13/issues/blob/master/lib/issues/table_formatter.ex#L38" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="greater_column_size/2">
+    <span class="signature"><strong>greater_column_size(list, column_name)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#greater_column_size/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+    <a href="https://github.com/SeaRbSg/elixir/greghill/chapter13/issues/blob/master/lib/issues/table_formatter.ex#L47" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="print_table_rows/2">
+    <span class="signature"><strong>print_table_rows(data, columns_to_print)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#print_table_rows/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Takes a list of row data, where each row is a HashDict, and a list of headers.
+Prints a table to STDOUT of the data from each row identified by each header.
+That is, each header identifies a column, and those columns are extracted and
+ printed from the rows. We calculate the width of each column to fit the 
+ longest element in that column.</p>
+
+  </section>
+  
+    <a href="https://github.com/SeaRbSg/elixir/greghill/chapter13/issues/blob/master/lib/issues/table_formatter.ex#L12" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="printheader/2">
+    <span class="signature"><strong>printheader(columns, widths)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#printheader/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+    <a href="https://github.com/SeaRbSg/elixir/greghill/chapter13/issues/blob/master/lib/issues/table_formatter.ex#L51" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="printrows/3">
+    <span class="signature"><strong>printrows(columns, issues, max_column_widths)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#printrows/3" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+    <a href="https://github.com/SeaRbSg/elixir/greghill/chapter13/issues/blob/master/lib/issues/table_formatter.ex#L61" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="printseparator/1">
+    <span class="signature"><strong>printseparator(widths)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#printseparator/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+    <a href="https://github.com/SeaRbSg/elixir/greghill/chapter13/issues/blob/master/lib/issues/table_formatter.ex#L56" class="view_source">Source</a>
+  
+</section>
+
+        </section>
+      
+
+      
+
+      
+    </section>
+  </body>
+</html>
