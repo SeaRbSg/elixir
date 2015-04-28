@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Issues.CLI</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" href="css/elixir.css" type="text/css" media="screen" charset="utf-8" />
+    <script type="text/javascript" charset="utf-8">
+      relpath = '';
+      if (relpath != '') relpath += '/';
+    </script>
+
+    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/highlight.pack.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      hljs.initHighlightingOnLoad();
+      hljs.configure({languages: []}); //disable autodetect
+    </script>
+  </head>
+
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+
+    <section id="content">
+      <div class="breadcrumbs">Issues v0.0.1 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Issues.html">Issues</a> &rarr; <a href="Issues.CLI.html">CLI</a></div>
+      <h1>
+        Issues.CLI
+        
+      </h1>
+
+      <ul class="summary_links">
+        
+          <li><a href="#summary">Summary</a></li>
+        
+        
+        
+          <li><a href="#functions_details">Functions</a></li>
+        
+        
+        
+      </ul>
+
+      
+        <section id="moduledoc" class="docstring">
+          <p>  Handle the command line parsing and the
+  dispatch to the various functions that
+  end up generating a table of the last
+  <em>n</em> issues in a github project</p>
+
+        </section>
+      
+
+      
+        <a href="https://github.com/pragdave/issues/blob/master/lib/issues/cli.ex#L1" class="view_source">Source</a>
+      
+
+      
+        <h2 id="summary">Summary<span class="detail_header_links"><a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a></span></h2>
+        <table class="summary">
+          <tr>
+  <td class="summary_signature"><a href="#convert_to_list_of_hashdicts/1">convert_to_list_of_hashdicts(list)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#decode_response/1">decode_response(arg1)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#main/1">main(argv)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#parse_args/1">parse_args(argv)</a></td>
+  
+    <td class="summary_synopsis"><p><code class="inline">argv</code> can be -h or —help, which returns
+  :help. Otherwise it is a github user name,
+  project name, and (optionally) the number
+  of entries to format. Return a tuple of
+  <code class="inline">{ user, project, count }</code>, or <code class="inline">:help</code> if
+  help was given</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#process/1">process(arg1)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#sort_into_ascending_order/1">sort_into_ascending_order(list_of_issues)</a></td>
+  
+</tr>
+
+        </table>
+      
+
+      
+
+      
+        <section id="functions_details" class="details_list">
+          <h2>Functions</h2>
+          <section class="detail">
+  <div class="detail_header" id="convert_to_list_of_hashdicts/1">
+    <span class="signature"><strong>convert_to_list_of_hashdicts(list)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#convert_to_list_of_hashdicts/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+    <a href="https://github.com/pragdave/issues/blob/master/lib/issues/cli.ex#L63" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="decode_response/1">
+    <span class="signature"><strong>decode_response(arg1)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#decode_response/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+    <a href="https://github.com/pragdave/issues/blob/master/lib/issues/cli.ex#L55" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="main/1">
+    <span class="signature"><strong>main(argv)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#main/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+    <a href="https://github.com/pragdave/issues/blob/master/lib/issues/cli.ex#L13" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="parse_args/1">
+    <span class="signature"><strong>parse_args(argv)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#parse_args/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>  <code class="inline">argv</code> can be -h or —help, which returns
+  :help. Otherwise it is a github user name,
+  project name, and (optionally) the number
+  of entries to format. Return a tuple of
+  <code class="inline">{ user, project, count }</code>, or <code class="inline">:help</code> if
+  help was given.</p>
+
+  </section>
+  
+    <a href="https://github.com/pragdave/issues/blob/master/lib/issues/cli.ex#L28" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="process/1">
+    <span class="signature"><strong>process(arg1)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#process/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+    <a href="https://github.com/pragdave/issues/blob/master/lib/issues/cli.ex#L39" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="sort_into_ascending_order/1">
+    <span class="signature"><strong>sort_into_ascending_order(list_of_issues)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#sort_into_ascending_order/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+    <a href="https://github.com/pragdave/issues/blob/master/lib/issues/cli.ex#L68" class="view_source">Source</a>
+  
+</section>
+
+        </section>
+      
+
+      
+
+      
+    </section>
+  </body>
+</html>

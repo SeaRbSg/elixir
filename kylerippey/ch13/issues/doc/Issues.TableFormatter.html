@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Issues.TableFormatter</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" href="css/elixir.css" type="text/css" media="screen" charset="utf-8" />
+    <script type="text/javascript" charset="utf-8">
+      relpath = '';
+      if (relpath != '') relpath += '/';
+    </script>
+
+    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/highlight.pack.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      hljs.initHighlightingOnLoad();
+      hljs.configure({languages: []}); //disable autodetect
+    </script>
+  </head>
+
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+
+    <section id="content">
+      <div class="breadcrumbs">Issues v0.0.1 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Issues.html">Issues</a> &rarr; <a href="Issues.TableFormatter.html">TableFormatter</a></div>
+      <h1>
+        Issues.TableFormatter
+        
+      </h1>
+
+      <ul class="summary_links">
+        
+          <li><a href="#summary">Summary</a></li>
+        
+        
+        
+          <li><a href="#functions_details">Functions</a></li>
+        
+        
+        
+      </ul>
+
+      
+
+      
+        <a href="https://github.com/pragdave/issues/blob/master/lib/issues/table_formatter.ex#L1" class="view_source">Source</a>
+      
+
+      
+        <h2 id="summary">Summary<span class="detail_header_links"><a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a></span></h2>
+        <table class="summary">
+          <tr>
+  <td class="summary_signature"><a href="#format_for/1">format_for(column_widths)</a></td>
+  
+    <td class="summary_synopsis"><p>Return a format string that hard codes the widths of a set of
+columns. We put <code class="inline">&quot; | &quot;</code> between each column</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#print_table_for_columns/2">print_table_for_columns(rows, headers)</a></td>
+  
+    <td class="summary_synopsis"><p>Takes a list of row data, where each row is a HashDict, and a
+list of headers. Prints a table to STDOUT of the data from each
+row identified by each header. That is, each header identifies
+a column, and those columns are extracted and printed from the
+rows. We calculate the width of each column to fit the longest
+element in that column</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#printable/1">printable(str)</a></td>
+  
+    <td class="summary_synopsis"><p>Return a binary (string) version of our parameter</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#puts_in_columns/2">puts_in_columns(data_by_columns, format)</a></td>
+  
+    <td class="summary_synopsis"><p>Given a list containing rows of data, a list containing the
+header selectors, and a format string, write the extracted
+data under control of the format string</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#puts_one_line_in_columns/2">puts_one_line_in_columns(fields, format)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#separator/1">separator(column_widths)</a></td>
+  
+    <td class="summary_synopsis"><p>Generate the line that goes below the column headings. It is a string of hyphens, with + signs where the vertical bar between the columns goes</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#split_into_columns/2">split_into_columns(rows, headers)</a></td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#widths_of/1">widths_of(columns)</a></td>
+  
+    <td class="summary_synopsis"><p>Given a list containing sublists, where each sublist contains the
+data for a column, return a list containing the maximum width of
+each column</p>
+</td>
+  
+</tr>
+
+        </table>
+      
+
+      
+
+      
+        <section id="functions_details" class="details_list">
+          <h2>Functions</h2>
+          <section class="detail">
+  <div class="detail_header" id="format_for/1">
+    <span class="signature"><strong>format_for(column_widths)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#format_for/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Return a format string that hard codes the widths of a set of
+columns. We put <code class="inline">&quot; | &quot;</code> between each column.</p>
+<h2>Example</h2>
+<p>  iex&gt; widths = [5,6,99]
+  iex&gt; Issues.TableFormatter.format_for(widths)
+  “~-5s | ~-6s | ~-99s~n”</p>
+
+  </section>
+  
+    <a href="https://github.com/pragdave/issues/blob/master/lib/issues/table_formatter.ex#L62" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="print_table_for_columns/2">
+    <span class="signature"><strong>print_table_for_columns(rows, headers)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#print_table_for_columns/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Takes a list of row data, where each row is a HashDict, and a
+list of headers. Prints a table to STDOUT of the data from each
+row identified by each header. That is, each header identifies
+a column, and those columns are extracted and printed from the
+rows. We calculate the width of each column to fit the longest
+element in that column.</p>
+
+  </section>
+  
+    <a href="https://github.com/pragdave/issues/blob/master/lib/issues/table_formatter.ex#L12" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="printable/1">
+    <span class="signature"><strong>printable(str)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#printable/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Return a binary (string) version of our parameter.</p>
+<h2>Examples</h2>
+<p>  iex&gt; Issues.TableFormatter.printable(“a”)
+  “a”
+  iex&gt; Issues.TableFormatter.printable(99)
+  “99”</p>
+
+  </section>
+  
+    <a href="https://github.com/pragdave/issues/blob/master/lib/issues/table_formatter.ex#L36" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="puts_in_columns/2">
+    <span class="signature"><strong>puts_in_columns(data_by_columns, format)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#puts_in_columns/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Given a list containing rows of data, a list containing the
+header selectors, and a format string, write the extracted
+data under control of the format string.</p>
+
+  </section>
+  
+    <a href="https://github.com/pragdave/issues/blob/master/lib/issues/table_formatter.ex#L83" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="puts_one_line_in_columns/2">
+    <span class="signature"><strong>puts_one_line_in_columns(fields, format)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#puts_one_line_in_columns/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+    <a href="https://github.com/pragdave/issues/blob/master/lib/issues/table_formatter.ex#L90" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="separator/1">
+    <span class="signature"><strong>separator(column_widths)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#separator/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Generate the line that goes below the column headings. It is a string of hyphens, with + signs where the vertical bar between the columns goes.</p>
+<h2>Example</h2>
+<p>  iex&gt; widths = [5,6,9]
+  iex&gt; Issues.TableFormatter.separator(widths)
+  “———+————+—————“</p>
+
+  </section>
+  
+    <a href="https://github.com/pragdave/issues/blob/master/lib/issues/table_formatter.ex#L74" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="split_into_columns/2">
+    <span class="signature"><strong>split_into_columns(rows, headers)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#split_into_columns/2" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    
+  </section>
+  
+    <a href="https://github.com/pragdave/issues/blob/master/lib/issues/table_formatter.ex#L21" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="widths_of/1">
+    <span class="signature"><strong>widths_of(columns)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#widths_of/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Given a list containing sublists, where each sublist contains the
+data for a column, return a list containing the maximum width of
+each column.</p>
+<h2>Example</h2>
+<p>  iex&gt; data = [ [ "cat", "wombat", "elk"], ["mongoose", "ant", "gnu"]]
+  iex&gt; Issues.TableFormatter.widths_of(data)
+  [ 6, 8 ]</p>
+
+  </section>
+  
+    <a href="https://github.com/pragdave/issues/blob/master/lib/issues/table_formatter.ex#L49" class="view_source">Source</a>
+  
+</section>
+
+        </section>
+      
+
+      
+
+      
+    </section>
+  </body>
+</html>
