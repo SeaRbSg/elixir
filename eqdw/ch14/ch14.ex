@@ -9,6 +9,10 @@
 # in q2, replace the first receive with {t, token} and the second
 # with {r, token}
 
+# q6: Because self called within the context of a fn passed to spawn
+#     returns the CHILD process's self. It's like var self=this in js
+
+
 defmodule Ch14 do
   def q2 do
     t = spawn(Ch14, :echo, [])
@@ -91,4 +95,38 @@ defmodule Ch14 do
     :timer.sleep(500)
     q4_recloop
   end
-end
+
+  def q7 do
+
+  end
+
+  def pmap(collection, fun) do
+    me = self
+    collection
+    |> Enum.map(fn (elem) ->
+         spawn_link fn -> (send me, { self, fun.(elem) }) end
+       end)
+    |> Enum.map(fn (pid) ->
+         receive do {^pid, result} -> result end
+       end)
+  end
+
+  def broken_pmap(collection, fun) do
+    me = self
+    collection
+    |> Enum.map(fn (elem) ->
+         spawn_link fn ->
+           sleep(:random.uniform(500))
+           (send me, { self, fun.(elem) }) 
+         end
+       end)
+    |> Enum.map(fn (pid) ->
+         receive do {_pid, result} -> result end
+       end)
+  end
+
+  def sleep(msec) do
+    receive do
+      after msec -> nil end
+    end
+  end
