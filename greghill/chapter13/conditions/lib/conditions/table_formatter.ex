@@ -37,6 +37,7 @@ defmodule Conditions.TableFormatter do
   end
 
   def getForm(length, padder,ljust) do
+    #"~-15..+s"
     "~#{ljust}#{length}..#{padder}s"
   end
 

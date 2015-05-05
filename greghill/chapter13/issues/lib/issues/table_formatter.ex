@@ -34,7 +34,6 @@ defmodule Issues.TableFormatter do
     iex>  testlist = [testdata,testdata2]
     iex>  Issues.TableFormatter.get_max_widths(["head1", "head2"],testlist)
     [2,18]
-    
   """
 
   def get_max_widths(columns,data) do
