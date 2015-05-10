@@ -1,0 +1,2 @@
+defmodule Sequence do
+end
