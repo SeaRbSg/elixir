@@ -1,4 +1,4 @@
-Sequence
-========
+Stack
+=====
 
 ** TODO: Add description **
