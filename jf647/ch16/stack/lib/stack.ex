@@ -9,6 +9,10 @@ defmodule Stack.Server do
     GenServer.call(__MODULE__, :pop)
   end
 
+  def push(newval) when is_integer(newval) and newval < 10 do
+    System.halt(3)
+  end
+
   def push(newval) do
     GenServer.cast(__MODULE__, {:push, newval})
   end
@@ -19,5 +23,13 @@ defmodule Stack.Server do
 
   def handle_cast({ :push, newval }, list) do
     { :noreply, list ++ [newval] }
+  end
+
+  def terminate(_, []) do
+    raise RuntimeError, message: "can't pop an empty stack"
+  end
+
+  def terminate(reason, _) do
+    raise RuntimeError, message: reason
   end
 end
