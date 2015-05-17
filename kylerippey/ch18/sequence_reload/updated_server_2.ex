@@ -35,7 +35,7 @@ defmodule Sequence.Server do
   def init(stash_pid) do
     {current_number, delta} = Sequence.Stash.get_value(stash_pid)
 
-    { :ok, %State{current_number: current_number, stash_pid: stash_pid} }
+    { :ok, %State{current_number: current_number, delta: delta, stash_pid: stash_pid} }
   end
 
   def handle_call(:next_number, _from, state) do 
