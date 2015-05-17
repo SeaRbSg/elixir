@@ -1,2 +1,0 @@
-_build/dev/lib/sequence/ebin/Elixir.Sequence.beam	Elixir.Sequence	lib/sequence.ex	Elixir
-_build/dev/lib/sequence/ebin/Elixir.Sequence.Server.beam	Elixir.Sequence.Server	lib/sequence/server.ex	Elixir.GenServer	Elixir.Kernel	Elixir.Module	Elixir
