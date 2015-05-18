@@ -9,11 +9,12 @@ defmodule Stack do
     children = [
       # Define workers and child supervisors to be supervised
       # worker(Stack.Worker, [arg1, arg2, arg3])
+      worker(Stack.Server, [["Howdy", "ho", "folks"]])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: Stack.Supervisor]
-    Supervisor.start_link(children, opts)
+    { :ok, _pid } = Supervisor.start_link(children, opts)
   end
 end
