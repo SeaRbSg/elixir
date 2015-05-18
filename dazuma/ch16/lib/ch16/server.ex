@@ -28,7 +28,7 @@ defmodule Ch16.Server do
     {:noreply, [val | stack]}
   end
 
-  def terminate(reason, state) do
+  def terminate(reason, _state) do
     IO.puts("**** TERMINATED: #{inspect(reason)}")
   end
 
