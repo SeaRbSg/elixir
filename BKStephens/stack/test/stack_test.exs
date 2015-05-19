@@ -2,8 +2,8 @@ defmodule StackTest do
   use ExUnit.Case
  
   setup do
-    #this does not work yet... it is expecting an { :ok, dict }
-    #:sys.replace_state(Stack.Server, fn _ -> { :ok, ["Howdy", "ho", "folks"] } end)
+    :sys.replace_state(Stack.Server, fn {_old_state, pid} -> {["Howdy", "ho", "folks"], pid} end)
+    :ok
   end
   
   test "the stack has initial values" do
@@ -19,7 +19,6 @@ defmodule StackTest do
   end
 
   test "can pop items off stack" do
-    assert Stack.Server.pop == "!!!"
     assert Stack.Server.pop == "Howdy"
     assert Stack.Server.pop == "ho"
     assert Stack.Server.pop == "folks"
