@@ -3,8 +3,7 @@ defmodule Stack.Server do
 
   #### External API
   def start_link (stash_pid) do 
-    IO.puts "In Stack.Server, Started server: #{__MODULE__}"
-    GenServer.start_link(__MODULE__, stash_pid, name: __MODULE__)
+     GenServer.start_link(__MODULE__, stash_pid, name: __MODULE__)
   end
 
   # Using __MODULE__ means that we can only start one of these?

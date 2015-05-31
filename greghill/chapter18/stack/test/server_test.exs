@@ -20,6 +20,11 @@ defmodule ServerTest do
   # end
   # This test assumes an initial value is set as [1,2,3]
   # could the test unit set it's own before the server starts?
+  # setup do
+  #   IO.puts "This is a setup callback"
+  #   :sys.replace_state(Stack.Stash, fn _ -> [] end)
+  #   IO.puts "#{IO.inspect SS.get_stack}" 
+  # end
 
   test "pops and pushes a value to and from the stack" do
     assert SS.pop == 40
@@ -27,6 +32,5 @@ defmodule ServerTest do
     assert [90,50,60] == SS.get_stack 
   end
 
-  #mix tests says this above is only 2 tests, why?
 
 end

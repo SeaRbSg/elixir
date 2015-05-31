@@ -2,7 +2,6 @@ defmodule Sequence.Server do
   use GenServer
   require Logger
   #What's the difference between use and require?
-
   defmodule State, 
     do: defstruct current_number: 0, stash_pid: nil, delta: 1
 
@@ -25,9 +24,7 @@ defmodule Sequence.Server do
   
   def init(stash_pid) do
     current_number = Sequence.Stash.get_value(stash_pid)
-    current_delta = Sequence.Stash.get_delta(stash_pid)
-    {:ok, %State{current_number: current_number, stash_pid: stash_pid,
-                delta: current_delta}}
+    {:ok, %State{current_number: current_number, stash_pid: stash_pid}}
   end
 
   def handle_call(:next_number, _from, state) do
@@ -53,7 +50,7 @@ defmodule Sequence.Server do
 
   def terminate(_reason, state) do
     #shouldn't we also be stashing the delta value?
-    Sequence.Stash.save_state state.stash_pid, {state.current_number, state.delta}
+    Sequence.Stash.save_value state.stash_pid, state.current_number
   end
 
   def code_change("0", old_state = { current_number, stash_pid}, _extra) do
@@ -61,10 +58,10 @@ defmodule Sequence.Server do
                         stash_pid: stash_pid,
                         delta: 1
                       }
-  #  Logger.start
-    # Logger.info "Change code from 0 to 1"
-    # Logger.info inspect(old_state)
-    # Logger.info inspect(new_state)
+
+    Logger.info "Change code from 0 to 1"
+    Logger.info inspect(old_state)
+    Logger.info inspect(new_state)
     {:ok, new_state}
   end
 end
