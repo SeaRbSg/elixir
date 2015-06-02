@@ -1,0 +1,1 @@
+The second puts does not need to unqote the args because the variable has been unquoted on the line above the second puts.
