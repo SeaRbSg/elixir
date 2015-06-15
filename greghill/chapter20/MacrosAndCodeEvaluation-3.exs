@@ -9,9 +9,9 @@ defmodule Englishify do
     # IO.puts "Left: #{inspect left}"
     # IO.puts "Right: #{inspect right}"
 
-    quote do 
-      translate(unquote(expr))
-    end
+
+    translate(expr)
+    
   end
 
   defp translate({operator, _, [left, right]}) when is_tuple left  do
