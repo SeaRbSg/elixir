@@ -1,6 +1,6 @@
 defmodule Bitmap do
   defstruct value: 0
-
+  
   defimpl Inspect, for: Bitmap do
     def inspect(value, _opts) do 
       "%Bitmap{value: #{ value |> to_string |> String.to_integer 2}}"
