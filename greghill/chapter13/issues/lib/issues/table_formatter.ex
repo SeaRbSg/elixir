@@ -1,5 +1,5 @@
 defmodule Issues.TableFormatter do 
-  @ doc """
+  @moduledoc """
   Takes a list of row data, where each row is a HashDict, and a list of headers.
   Prints a table to STDOUT of the data from each row identified by each header.
   That is, each header identifies a column, and those columns are extracted and
