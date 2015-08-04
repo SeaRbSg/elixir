@@ -44,7 +44,7 @@ class TanxApp {
   setupChatChannel() {
     var $messages = $("#messages");
     var $messageInput = $("#message-input");
-    var $usernameInput = $("#username");
+    var $usernameInput = $("#tanx-name-field");
 
     let socket = new Socket("/ws");
     socket.connect()
@@ -164,6 +164,7 @@ class TanxApp {
     $('#tanx-rename-btn').show();
     $('#tanx-leave-btn').show();
     $('#tanx-arena-container').show();
+    $('#tanx-chat').show()
 
     if (!this._hasPlayer) {
       this._hasPlayer = true;
@@ -178,6 +179,8 @@ class TanxApp {
     $('#tanx-rename-btn').hide();
     $('#tanx-leave-btn').hide();
     $('#tanx-arena-container').hide();
+    $('#tanx-chat').hide()
+
     this.BACKGROUND_MUSIC.pause();
     this.BACKGROUND_MUSIC.currentTime = 0;
 
