@@ -87,6 +87,7 @@ defmodule Tanx.Core.Game do
   defmodule State do
     defstruct structure: nil,
               player_manager: nil,
+              bot_manager: nil,
               arena_objects: nil,
               arena_view: nil,
               clock: nil,
@@ -104,11 +105,21 @@ defmodule Tanx.Core.Game do
     arena_view = Tanx.Core.ArenaView.start_link(structure)
     player_manager = Tanx.Core.PlayerManager.start_link(
         arena_objects, arena_view, time_config, change_handler, handler_args)
+
+    bot_manager = Tanx.Core.BotManager.start_link(player_manager)
+
+    # TODO: Move this to a BotUpdater process
+    {:ok, bot} = bot_manager |> Tanx.Core.BotManager.create_bot("CircleBot 9000")
+    bot |> Tanx.Core.Player.new_tank()
+    bot |> Tanx.Core.Player.control_tank("forward", true)
+    bot |> Tanx.Core.Player.control_tank("left", true)
+
     clock = Tanx.Core.Clock.start_link(self, clock_interval, time_config)
 
     state = %State{
       structure: structure,
       player_manager: player_manager,
+      bot_manager: bot_manager,
       arena_objects: arena_objects,
       arena_view: arena_view,
       clock: clock,
