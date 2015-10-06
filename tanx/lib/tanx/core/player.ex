@@ -122,6 +122,14 @@ defmodule Tanx.Core.Player do
 
 
   @doc """
+    Gets the power ups on the player.
+  """
+  def get_powerups(player) do
+    GenServer.call(player, :get_powerups)
+  end
+
+
+  @doc """
   Sends a control message to the tank in the form of a button press or release.
 
   Supported buttons are:
@@ -339,9 +347,16 @@ defmodule Tanx.Core.Player do
     case type do
       %Tanx.Core.PowerUpTypes.BouncingMissile{} ->
         state =  %State{state | powerups: Dict.put(state.powerups, :wall_bounce, type.bounce_count)}
+      %Tanx.Core.PowerUpTypes.HealthKit{} ->
+        state.current_tank |> Tanx.Core.Tank.adjust(nil, nil, 2.0)
+        state
       _ -> state
     end
     {:reply, :ok, state}
+  end
+
+  def handle_call(:get_powerups, _from, state) do
+    {:reply, state.powerups, state}
   end
 
   #### Internal utils
