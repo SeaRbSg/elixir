@@ -1,3 +1,3 @@
-defmodule Basic do 
+defmodule Basic do
   defstruct content: nil
 end

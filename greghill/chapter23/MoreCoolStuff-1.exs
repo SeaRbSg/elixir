@@ -1,12 +1,10 @@
 defmodule CommaParseSigil do
   def sigil_v(lines, _opts) do
-    lines 
+    lines
     |> String.rstrip
     |> String.split("\n")
     |> Enum.map(fn x -> String.split(x,",") end)
   end
-
-  
 end
 
 defmodule Example do

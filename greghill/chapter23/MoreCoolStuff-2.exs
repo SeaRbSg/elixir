@@ -1,14 +1,17 @@
 defmodule CommaParseSigil do
   def sigil_v(lines, _opts) do
-    lines 
+    lines
     |> String.rstrip
     |> String.split("\n")
-    |> Enum.map(&String.split(&1,",") |> Enum.map(&(convert_to_float(&1))))
-    
+    |> Enum.map(&process_line(&1))
+  end
+
+  def process_line(line) do
+    String.split(line,",")
+    |> Enum.map(&convert_to_float(&1))
   end
 
   def convert_to_float(string) do
-    IO.puts "String to convert: #{string}"
     case Float.parse(string) do
       :error -> string
       {x,""} -> x

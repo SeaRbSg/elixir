@@ -4,7 +4,7 @@ defmodule CommaParseSigil do
                            |> String.rstrip
                            |> String.split("\n")
 
-    header_list = String.split(header,",")    
+    header_list = String.split(header,",")
 
     line_list
     |> Enum.map(&add_head_to_item(String.split(&1,","), header_list))
@@ -18,7 +18,7 @@ defmodule CommaParseSigil do
   end
 
   def add_head_to_item([],[]), do: []
-  def add_head_to_item([item_1 | rest_of_line], [header_1 | rest_of_headers]) do 
+  def add_head_to_item([item_1 | rest_of_line], [header_1 | rest_of_headers]) do
     [{String.to_atom(header_1),item_1} | add_head_to_item(rest_of_line,rest_of_headers)]
   end
 end
