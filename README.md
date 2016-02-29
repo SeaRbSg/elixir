@@ -1,26 +1,17 @@
-# Seattle.Rb Elixir Study Group
-
+# Seattle.rb Elixir Study Group
 [![Join the chat at https://gitter.im/SeaRbSg/elixir](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/SeaRbSg/elixir?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+## Current Book
+The Seattle.rb Elixir Study Group will be reading [Programming Phoenix](https://pragprog.com/book/phoenix/programming-phoenix) starting in May of 2016.
+
+## Location
+We meet Mondays at 7 PM in the upstairs section of [Caffé Vita in Capitol Hill](https://www.google.com/maps/place/Caff%C3%A9+Vita/@47.6138651,-122.3212132,17z/data=!3m1!4b1!4m2!3m1!1s0x54906acc4738cf25:0xeff18719160ca666)
 
 ## Study Schedule
 
 week | chapters   | pages | comments
 -----|------------|-------|---------
-3/2  | 1          | 12    | install elixir, github repo, mailing list
-3/9  | 2, 3, 4    | 20    |
-3/16 | 5\*        | 10    |
-3/23 | 6\*        | 18    |
-3/30 | 7\*        | 14    |
-4/6  | 8, 9, 10\* | 32    |
-4/13 | 11, 12     | 24    |
-4/20 | 13         | 34    | no meetup this week, long homework in this chapter.
-4/27 | 13 cont.   | -     |
-5/4  | 14         | 20    |
-5/11 | 15, 16     | 22    |
-5/18 | 17, 18     | 20    |
-5/25 | 19, 20     | 24    |
-6/1  | 21, 22     | 19    |
-6/8  | 23, A1, A2 | 26    | wrap-up
+05/02/16  | Intro and 1 | ? |
 
 Starred chapters include the most important concepts that we should spend time on
 
@@ -32,7 +23,7 @@ merge commits on top of others work:
 
 ```
 [branch]
-	autosetuprebase = always
+  autosetuprebase = always
 [pull]
-	rebase = preserve
+  rebase = preserve
 ```
