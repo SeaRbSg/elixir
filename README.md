@@ -11,6 +11,7 @@ We meet Mondays at 7 PM in the upstairs section of [Caffé Vita in Capitol Hill]
 
 week | chapters   | pages | comments
 -----|------------|-------|---------
+04/07/16  | Elixir Hack Night | |
 05/09/16  | Intro and 1 | ? |
 
 Starred chapters include the most important concepts that we should spend time on
