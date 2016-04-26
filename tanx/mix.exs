@@ -4,7 +4,7 @@ defmodule Tanx.Mixfile do
   def project do
     [app: :tanx,
      version: "0.0.1",
-     elixir: "~> 1.0",
+     elixir: "~> 1.2",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix] ++ Mix.compilers,
      build_embedded: Mix.env == :prod,
@@ -31,10 +31,10 @@ defmodule Tanx.Mixfile do
   defp deps do
     [
       {:poison, "~> 1.5"},
-      {:phoenix, "~> 1.0.3"},
-      {:phoenix_ecto, "~> 1.2"},
+      {:phoenix, "~> 1.1.2"},
+      {:phoenix_ecto, "~> 2.0"},
       {:postgrex, ">= 0.9.1"},
-      {:phoenix_html, "~> 2.2"},
+      {:phoenix_html, "~> 2.3"},
       {:phoenix_live_reload, "~> 1.0.1", only: :dev},
       {:cowboy, "~> 1.0.3"}
     ]
