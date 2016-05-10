@@ -5,7 +5,9 @@
 The Seattle.rb Elixir Study Group will be reading [Programming Phoenix](https://pragprog.com/book/phoenix/programming-phoenix) starting in May of 2016.
 
 ## Location
-We meet Mondays at 7 PM in the upstairs section of [Caffé Vita in Capitol Hill](https://www.google.com/maps/place/Caff%C3%A9+Vita/@47.6138651,-122.3212132,17z/data=!3m1!4b1!4m2!3m1!1s0x54906acc4738cf25:0xeff18719160ca666)
+~~We meet Mondays at 7 PM in the upstairs section of [Caffé Vita in Capitol Hill](https://www.google.com/maps/place/Caff%C3%A9+Vita/@47.6138651,-122.3212132,17z/data=!3m1!4b1!4m2!3m1!1s0x54906acc4738cf25:0xeff18719160ca666)~~
+
+We meet Mondays at 7 PM in the back room of [Espresso Vivace](https://www.google.com/maps/place/Espresso+Vivace+Roasteria/@47.6238267,-122.322875,17z/data=!3m1!4b1!4m5!3m4!1s0x5490152ded7b27e9:0x25ea205bb393c770!8m2!3d47.6238267!4d-122.3206863)
 
 ## Study Schedule
 
@@ -14,6 +16,7 @@ week | chapters   | pages | comments
 04/11/16  | Elixir Hack Night | |
 04/25/16  | Elixir Hack Night | |
 05/09/16  | Intro and 1 | ? |
+05/16/16  | Chapter 2 | |
 
 Starred chapters include the most important concepts that we should spend time on
 
